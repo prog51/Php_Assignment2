@@ -7,7 +7,7 @@
 
 
 
-<div class="jumbotron">
+<div class="jumbotron"><!-- -->
    <div class="row">
          <div class="col-md-8">
               <h1 class="display-4">Welcome to Ocean's 8 Pet store</h1>
