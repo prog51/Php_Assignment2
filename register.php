@@ -11,7 +11,7 @@
 
          <h1>Make Your Appointment</h1>
 
-         <form action="success.php" method="POST">    
+         <form action="success.php" method="POST" enctype="multipart/form-data">    
                <fieldset>
                   <label>Owner's name:</label><br/>
                   <input required type="text" name="owner_name" class="form-control" />
@@ -27,6 +27,21 @@
 				  
 				  <label>password:</label><br/>
                   <input required type="password" name="password" class="form-control" /><br/>
+				  
+				  <label>Pet's Name</label><br/>
+                  <input required type="text" name="pet" class="form-control" /><br/>
+				  
+				   <label>Pet's Age</label><br/>
+                  <input required type="number" name="age" class="form-control" /><br/>
+				  
+				    <label>Type(Dog,cat etc)</label><br/>
+                  <input required type="text" name="typePet" class="form-control" /><br/>
+				  
+				     <label>Description of pet</label><br/>
+                  <textarea required name="desc" class="form-control" rows="4" cols="50"></textarea><br/>
+				  
+				   <label>Photo of your pet</label><br/>	
+				   <input required type="file" name="petPhoto" class="form-control" /><br/>
 
                   <button type="submit" name = "register_submit" class="btn-primary btn">SUBMIT</button>
                </fieldset>
@@ -35,6 +50,9 @@
 
    <div class="col-md-2"></div>
 </div>
+
+<br/>
+<br/>
 
 
 <?php

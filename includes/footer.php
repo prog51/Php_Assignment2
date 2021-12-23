@@ -2,6 +2,9 @@
 
 
 
-     <footer class="p-3 mb-2 bg-primary text-white fixed-bottom"></footer>
+     <footer class="bg-primary text-white pt-5 pd-5">
+	 
+	 
+	 </footer>
 </body>
 </html>

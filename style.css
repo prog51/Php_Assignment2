@@ -1,0 +1,22 @@
+.fixed-bottom
+{
+	margin-top:150px;
+}
+
+.home-img-below-header
+  {
+	background-image:url("images/pet-our-pets.jpg");
+	background-size:cover;
+	background-attachment:fixed;
+	padding:50px 50px;
+  }
+  
+ .about-para
+ {
+	 padding-left:150px;
+ }
+ 
+ .home-banner
+ {
+	 background-color:#006994;
+ }

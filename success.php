@@ -1,7 +1,6 @@
 <?php
    require('includes/header.php');
-
-?>
+ ?>
 
 <?php
    
@@ -19,6 +18,24 @@
 		$address = $_POST['address'];  
         $phone = $_POST['phone'];	
         $password = $_POST['password'];
+		$pet = $_POST['pet'];
+		$age = $_POST['age'];
+		$typePet = $_POST['typePet'];
+		$petPhoto = $_FILES["petPhoto"]["tmp_name"];
+		$desc = $_POST['desc'];
+	
+		
+		//exit();
+		           
+		
+		$ext = pathinfo($_FILES["petPhoto"]["name"],PATHINFO_EXTENSION);
+		$target_dir = 'upload/';
+		
+		$destination = "$target_dir$phone.$ext"; 
+		
+		move_uploaded_file($petPhoto,$destination);
+		
+		
 
         $new_password = md5($password.$email);		
          
@@ -29,9 +46,9 @@
 	   return 0;
      }
 
-     $result = $crud->insert($ownerName,$email,$address,$phone,$new_password);
+     $result = $crud->insert($ownerName,$email,$phone,$address,$new_password,$pet,$age,$typePet,$destination,$desc);
 	 
-	 echo "ID: " . $result['ownerId'];
+	  $_SESSION['ID'] = $result['ownerId'];
 	 
  
 		 
@@ -48,6 +65,8 @@
 				  
 				   <div class="col-md-8">
 				   
+				       <br/><br/><br/>
+					   
 					   <h1>YOUR ACCOUNT HAS BEEN CREATED</h1>
 
 						<p>Click button below to see profile page</p>	
@@ -63,7 +82,7 @@
 			   </div>
 			   
 		  </div>
-    </div>
+    </div><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 	
 <?php
 

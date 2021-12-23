@@ -4,16 +4,28 @@
    require('db/conn.php');
    
    
-      if(isset($_POST['log_submit']))
+      if($_SERVER['REQUEST_METHOD'] == "POST")
 	  {
-		 $email =  $_POST['email'];
+		 $email =  strtolower(trim($_POST['email']));
 		 $password =  $_POST['password'];
 		 
-		 $new_password = 
+		 $new_password = md5($password.$email);
 		 
-		 $result = $crud->getOwnerDetails($email,$password);
+		 $result = $crud->getOwnerDetails($email,$new_password);
 		 
-		 echo $result['ownerId'];
+		 
+		 	 
+		 if($result == true)
+		 {
+			 $_SESSION['ID'] = $result['ownerId'];
+			 
+			  header('location:profile.php');
+	
+		 }
+		 else
+		 {
+			echo "incorrect"; 
+		 }
 	
 	  }
    
@@ -43,7 +55,7 @@
 
    <div class="col-md-2"></div>
 </div>
-
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
 
 <?php

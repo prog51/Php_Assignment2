@@ -22,8 +22,10 @@
     }
 
     require('crud.php');
+	require('owner.php');
 
     $crud = new crud($pdo);
+	$owner = new owners($pdo);
 
 
 
